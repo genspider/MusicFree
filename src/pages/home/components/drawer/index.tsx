@@ -236,7 +236,7 @@ const style = StyleSheet.create({
     },
 
     header: {
-        height: rpx(120),
+        height: rpx(100),
         width: "100%",
         flexDirection: "row",
         justifyContent: "space-between",

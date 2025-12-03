@@ -54,6 +54,7 @@ export default function SetUserVariables(props: IUserVariablesProps) {
                             {variables.map(it => (
                                 <ListItem
                                     withHorizontalPadding
+                                    key={it.key ?? it.name}
                                     style={styles.listItem}>
                                     <ThemeText
                                         numberOfLines={1}
@@ -104,7 +105,7 @@ const styles = StyleSheet.create({
         maxWidth: "35%",
     },
     input: {
-        width: "50%",
+        minWidth: "65%",
         paddingVertical: rpx(8),
         paddingHorizontal: rpx(12),
         borderRadius: rpx(8),

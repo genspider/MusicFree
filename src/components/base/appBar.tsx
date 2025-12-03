@@ -106,10 +106,13 @@ export default function AppBar(props: IAppBarProps) {
                     { backgroundColor: bgColor },
                 ]}>
                 <IconButton
+                    style={[
+                        globalStyle.notShrink,
+                        styles.leftButton,
+                    ]}
                     name="arrow-left"
                     sizeType="normal"
                     color={contentColor}
-                    style={globalStyle.notShrink}
                     onPress={
                         onBackPress ||
                         (() => {
@@ -242,16 +245,18 @@ const styles = StyleSheet.create({
         height: rpx(88),
         flexDirection: "row",
         alignItems: "center",
-        paddingHorizontal: rpx(24),
     },
     content: {
         flexDirection: "row",
         flexBasis: 0,
         alignItems: "center",
-        paddingHorizontal: rpx(24),
+    },
+    leftButton: {
+        paddingHorizontal: rpx(42),
     },
     rightButton: {
-        marginLeft: rpx(28),
+        paddingHorizontal: rpx(42),
+        marginRight: rpx(24),
     },
     blocker: {
         position: "absolute",

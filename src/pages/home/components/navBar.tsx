@@ -18,15 +18,17 @@ export default function NavBar() {
 
     return (
         <View style={styles.appbar}>
-            <IconButton
-                accessibilityLabel={t("home.openSidebar.a11y")}
-                name="bars-3"
-                style={styles.menu}
-                color={colors.text}
+            <Pressable
+                style={[styles.menuContainer]}
                 onPress={() => {
                     navigation?.openDrawer();
-                }}
-            />
+                }}>
+                <IconButton
+                    accessibilityLabel={t("home.openSidebar.a11y")}
+                    name="bars-3"
+                    color={colors.text}
+                />
+            </Pressable>
 
             <Pressable
                 style={[
@@ -67,7 +69,7 @@ const styles = StyleSheet.create({
         height: rpx(88),
     },
     searchBar: {
-        marginHorizontal: rpx(24),
+        marginRight: rpx(24),
         flexDirection: "row",
         alignItems: "center",
         flex: 1,
@@ -80,7 +82,8 @@ const styles = StyleSheet.create({
         marginLeft: rpx(12),
         opacity: 0.6,
     },
-    menu: {
-        marginLeft: rpx(24),
+    menuContainer: {
+        paddingHorizontal: rpx(24),
+        borderRadius: rpx(20),
     },
 });

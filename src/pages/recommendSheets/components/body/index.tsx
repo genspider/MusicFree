@@ -67,9 +67,9 @@ export default function Body() {
                 routes,
             }}
             renderTabBar={renderTabBar}
-            renderScene={props => {
-                return <SheetBody hash={props.route.key} />;
-            }}
+            renderScene={({ route }) => (
+                <SheetBody key={route.key} hash={route.key} />
+            )}
             onIndexChange={setIndex}
             initialLayout={{ width: vw(100) }}
         />
